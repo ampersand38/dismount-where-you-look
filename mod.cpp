@@ -1,0 +1,12 @@
+name = "Dismount Where You Look";
+picture = "logo_dwyl_ca.paa";
+actionName = "GitHub";
+action = "https://github.com/ampersand38/ride-where-you-look";
+description = "Dismount at the memoryPointGetIn you're looking at.";
+logo = "logo_dwyl_ca.paa";
+logoOver = "logo_dwyl_ca.paa";
+tooltip = "Dismount Where You Look";
+tooltipOwned = "Dismount Where You Look";
+overview = "Dismount at the memoryPointGetIn you're looking at.";
+author = "Ampersand";
+overviewPicture = "logo_dwyl_ca.paa";
