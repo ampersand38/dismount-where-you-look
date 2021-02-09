@@ -15,6 +15,7 @@ Player exits vehicle at the chosen memory point.
 
 if dwyl_exit_pfh_running then {dwyl_exit_pfh_running = false};
 private _vehicle = vehicle player;
+if (_vehicle == player) exitWith {};
 
 if (isNil "dwyl_exit_position") then {
     private _sp = [_vehicle] call dwyl_main_fnc_getExits;
