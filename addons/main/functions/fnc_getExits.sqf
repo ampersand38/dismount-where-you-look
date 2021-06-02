@@ -22,7 +22,7 @@ params ["_vehicle"];
 
 // get proxies
 private _sn = _vehicle selectionNames "Memory" select {
-    _x select [0,4] == "pos " && {_x find "dir" == -1}
+    _x select [0,3] == "pos" && {(_x select [3,1]) in [" ", "_"]} && {_x find "dir" == -1}
 };
 if (_sn isEqualTo []) exitWith {};
 
