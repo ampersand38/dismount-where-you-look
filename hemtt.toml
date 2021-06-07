@@ -1,0 +1,24 @@
+name = "DismountWhereYouLook"
+modname = "dismount_where_you_look"
+prefix = "dwyl"
+author = "ampersand38 "
+files = [
+    "AUTHORS.txt",
+    "logo_dwyl_ca.paa",
+    "mod.cpp",
+    "LICENSE",
+    "README.md"
+]
+include = [
+    "./include"
+]
+
+key_name = "{{prefix}}_{{version}}"
+authority = "{{prefix}}_{{version}}-{{git \"id 8\"}}"
+
+releasebuild = [
+    "@zip dismount_where_you_look_{{semver.major}}.{{semver.minor}}.{{semver.patch}}"
+]
+
+[header_exts]
+version= "{{git \"id 8\"}}"
