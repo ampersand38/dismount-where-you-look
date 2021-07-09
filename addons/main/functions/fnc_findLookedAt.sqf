@@ -23,7 +23,7 @@ params ["_vehicle", "_sp"];
 
 private _maxDotProduct = -1;
 private _indexClosest = -1;
-private _cameraVector = positionCameraToWorld [0, 0, 0] vectorFromTo positionCameraToWorld [0, 0, 1];
+private _cameraVector = getCameraViewDirection player;
 {
     private _selectionVector = vectorNormalized (positionCameraToWorld [0, 0, 0] vectorFromTo (_vehicle modelToWorldVisual _x));
     private _dotProduct = _cameraVector vectorDotProduct _selectionVector;

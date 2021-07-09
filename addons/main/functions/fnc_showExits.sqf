@@ -31,15 +31,11 @@ dwyl_main_colour_faded = [
 ];
 
 dwyl_exit_pfh_running = true;
-dwyl_exit_position = nil;
+
 [{
     params ["_args", "_pfID"];
     _args params ["_vehicle", "_sp"];
-    dwyl_exit_memoryPoint = nil;
     if (!dwyl_exit_pfh_running || {vehicle player == player}) exitWith {
-        [_pfID] call CBA_fnc_removePerFrameHandler;
-    };
-    if (vehicle player == player) exitWith {
         dwyl_exit_pfh_running = false;
         [_pfID] call CBA_fnc_removePerFrameHandler;
     };
