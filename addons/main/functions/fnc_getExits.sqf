@@ -21,9 +21,23 @@ Return mirrored and filtered positions of get in memory points
 params ["_vehicle"];
 
 // get proxies
-private _sn = _vehicle selectionNames "Memory" select {
-    (_x select [0,3] == "pos" && {(_x select [3,1]) in [" ", "_"]} && {_x find "dir" == -1} ) || _x select [count _x - count "_getin_pos"] isEqualTo "_getin_pos"
-};
+private _selectionNames = _vehicle selectionNames "Memory";
+private _sn = [];
+private _vehicleType = typeOf _vehicle;
+{
+	private _cfgTurret = [_vehicleType, _x] call BIS_fnc_turretConfig;
+	{
+		private _cfgMemoryPoint = _cfgTurret >> format ["memoryPointsGetIn%1", _x];
+		if (!isNull _cfgMemoryPoint) then {
+			{
+				_x = toLower _x;
+				if (_x in _selectionNames) then {
+					_sn pushBackUnique _x;
+				};
+			} forEach (if (isArray _cfgMemoryPoint) then { getArray _cfgMemoryPoint } else { [getText _cfgMemoryPoint] });
+		};
+	} foreach ["Driver", "CoDriver", "Commander", "Gunner", "Cargo"];
+} forEach ([[-1]] + allTurrets [_vehicle, true]);
 if (_sn isEqualTo []) exitWith {};
 
 private _sp = _sn apply {_vehicle selectionPosition _x vectorAdd [0, 0, 1]};
