@@ -6,4 +6,5 @@ texHeaders.bin
 *.swo
 *.biprivatekey
 Thumbs.db
-releases/
+hemtt*
+!hemtt.toml

@@ -1,7 +1,7 @@
-name = "DismountWhereYouLook"
-modname = "dismount_where_you_look"
+name = "Dismount Where You Look"
 prefix = "dwyl"
-author = "ampersand38 "
+mainprefix = "z"
+author = "Amersand"
 files = [
     "AUTHORS.txt",
     "logo_dwyl_ca.paa",
